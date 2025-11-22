@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Blen&Cadence - products</title>
+        <style>
+          body {
+               background-color:#f7ffd9;
+               font-family:sans-serif;
+               margin:30px;
+               text-align:center;
+           }
+            #Div-1 {
+                background-color:#a4f8e3;
+                border-radius:10%;
+            }
+            h1,h2,h3 {
+               text-align:center;
+               font-family:cursive;
+               color:#89b692;
+            }
+          .Div-3 {
+              background-color:#aba7cd;
+              border-radius:5%;
+          }
+          p {
+              text-align:center;
+              color:#69b7c3;
+          }
+          h5,h6,h4 {
+              font-family:serif;
+              color:#ffc1dc;
+              
+          } 
+          button {
+              background-color:#d69f83;
+              font-family:cursive;
+              color:#ffd1cb;
+              margin:5px;
+              
+          }
+          .popup-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+  color:black;
+}
+        </style>
+    </head>
+    <body>
+<div id="Div-1">
+    <h1>Blen&Cadence - products</h1>
+</div>
+<div>
+<p>Click the buttons to look at our product selection and find out the price, why, and pros and cons!</p>
+</div>
+<div class="Div-3">
+<h3>Blind bags</h3>
+<ul>
+    <li><button id="hellokitty-bb">Hello Kitty</button></li>
+    <li><button id="kpop-bb"><em>Kpop Demon Hunters</em></button></li>
+    <li><button id="cust-bb">Costum Made blind bags!</button></li>
+</ul>
+<h3>Book marks</h3>
+<ul>
+    <li><button id="hellokitty-bm">Hello Kitty</button></li>
+    <li><button id="kpop-bm"><em>Kpop Demon Hunters</em></button></li>
+    <li><button id="cust-bm">Costum Made bookmarks!</button></li>
+</ul>
+</div>
+<div class="Div-3">
+    <h4>Special thanks to..</h4>
+    <h5>Cadence(Founder)</h5>
+    <h5>Blen(Website maker and Designer)</h5>
+    <h5>Our workers who make and sell products!</h5>
+    <h6>Questions or/and complaints? Email blenmersha8@gmail.com!</h6>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    var buttonEls = document.querySelectorAll("button");
+
+   var onButtonClicks = function(event) {
+    var makeDiv = document.createElement("div");
+    makeDiv.innerHTML = "default"; // Optional, for safety
+    document.body.appendChild(makeDiv);
+
+    const id = event.currentTarget.id;
+    console.log(id);
+
+    if (id === "hellokitty-bb") makeDiv.innerHTML = "<h3>Somethigns about this product</h3><ul><li>It costs 2:00</li><li>It is cute</li><li>Stupid activity ideas</li></ul>";
+    if (id === "kpop-bb") makeDiv.innerHTML = "";
+
+    if (id === "cust-bb") makeDiv.innerHTML = "hellob";
+
+    if (id === "hellokitty-bm") makeDiv.innerHTML = "helloc";
+    if (id === "kpop-bm") makeDiv.innerHTML = "hellod";
+    if (id === "cust-bm") makeDiv.innerHTML = "helloe";
+
+    makeDiv.className = "popup-card";
+};
+
+
+    for (var i = 0; i < buttonEls.length; i++) {
+        buttonEls[i].addEventListener("click", onButtonClicks);
+    }
+
+});
+</script>
+
+    </body>
+</html>
